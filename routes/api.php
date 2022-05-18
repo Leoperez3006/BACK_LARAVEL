@@ -21,5 +21,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post("client", [ApiController::class, "createClient"]);
 Route::get("client", [ApiController::class, "getClients"]);
-Route::delete("client", [ApiController::class, "deleteClient"]);
+Route::delete("client/{id}", [ApiController::class, "deleteClient"]);
 Route::patch("client/{id}", [ApiController::class, "editClient"]);

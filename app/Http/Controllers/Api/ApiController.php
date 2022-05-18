@@ -35,10 +35,10 @@ class ApiController extends Controller
     }
 
 
-    public function deleteClient (Request $request) {
+    public function deleteClient ($id) {
 
-        if ( Clients::where("id",$request->id)->exists()){
-            $clientDelete = Clients::find($request->id);
+        if ( Clients::where("id",$id)->exists()){
+            $clientDelete = Clients::find($id);
             $clientDelete -> delete();
             return response() -> json([
                 "status"=>1,
